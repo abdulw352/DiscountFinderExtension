@@ -1,1 +1,24 @@
+{
+    "name": "Discount Finder",
+    "version": "0.1",
+    "description": "Finding the best discounts available",
+    "permission": [
+        "activeTab",
+        "<all_urls>",
+        "tabs"
+    ],
+    "background": {
+        "page": "background.html",
+        "persistant": false
 
+    },
+    "content_scripts":[
+        {
+            "matches": ["<all_urls>"],
+            "js": ["app.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com "
+}
